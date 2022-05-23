@@ -1,0 +1,78 @@
+{
+  "controls": [
+    {
+      "name": "Nombre",
+      "label": "Nombre",
+      "value": "",
+      "type": "text",
+      "validators": {
+        "required": true,
+        "minLength": 1,
+        "maxLength": 15
+      }
+    },
+    {
+      "name": "lastName",
+      "label": "Last name",
+      "value": "",
+      "type": "text",
+      "validators": {"required":true}
+    },
+    {
+      "name": "age",
+      "label": "Age",
+      "value": "",
+      "type": "number",
+      "validators" : {
+        "required":true,
+        "min": 18,
+        "max": 60,
+        "pattern": "[0-9]*"
+      },
+      "options" :{
+        "comment": "Edades entre 18 y 60 años"
+      }
+    },
+    {
+      "name": "comments",
+      "label": "Comments",
+      "value": "",
+      "type": "textarea",
+      "validators": {}
+    },
+    {
+      "name": "agreeTerms",
+      "label": "Do you agree?",
+      "value": "false",
+      "type": "checkbox",
+      "validators": {"requiredTrue":true}
+    },
+    {
+      "name": "lightDark",
+      "label": "Toggle dark mode",
+      "value": "false",
+      "type": "toggle",
+      "validators": {}
+    },
+    {
+      "name": "size",
+      "label": "Size",
+      "value": "",
+      "type": "range",
+      "options": {
+        "min": "0",
+        "max": "100",
+        "step": "1",
+        "icon": "sunny"
+      },
+      "validators": {}
+    },
+    {
+      "name": "productos",
+      "label": "Productos",
+      "value": "",
+      "type": "list",
+      "validators": {}
+    }
+  ]
+}
