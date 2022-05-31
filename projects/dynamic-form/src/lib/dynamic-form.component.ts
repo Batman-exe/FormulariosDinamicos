@@ -17,8 +17,15 @@ interface JsonFormControlOptions {
   min?: string;
   max?: string;
   step?: string;
+  placeholder?: string;
   icon?: string;
   comment?: string;
+  items?: FixedOptions[];
+}
+
+interface FixedOptions {
+  value: string;
+  viewValue: string;
 }
 
 interface JsonFormControls {
@@ -60,6 +67,8 @@ export class DynamicFormComponent implements OnInit {
     if (!changes['jsonFormData'].firstChange) {
       this.createForm(this.jsonFormData.controls);
     }
+    console.log('Form valid: ', this.myForm.valid);
+    console.log('Form values: ', this.myForm.value);
   }
 
   createForm(controls: JsonFormControls[]) {
