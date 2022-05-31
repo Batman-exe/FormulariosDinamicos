@@ -1,5 +1,32 @@
-<mat-form-field *ngFor="let control of jsonFormData?.controls" class="full-width" appearance="fill">
-    <mat-label>{{control.label}}</mat-label>
-    <input matInput placeholder="sample" value="">
-</mat-form-field>
+<div *ngFor="let control of jsonFormData?.controls">
+    
+    <mat-form-field *ngIf="['text', 'password', 'email', 'number', 'search', 'tel', 'url'].includes(control.type)" 
+    class="full-width" appearance="fill">
+        <mat-label>{{control.label}}</mat-label>
+        <input  matInput
+            placeholder="{{control.options?.placeholder}}" value="{{control.value}}" name="{{control.name}}"
+            type="{{control.type}}">
+    </mat-form-field>
 
+    <mat-form-field *ngIf="control.type === 'textarea'">
+        <mat-label>{{control.label}}</mat-label>
+        <textarea  matInput placeholder="{{control.options?.placeholder}}" name="{{control.name}}" 
+        value="{{control.value}}"></textarea>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="control.type === 'select'">
+        <mat-label>{{control.label}}</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let item of control.options?.items" [value]="item.value">
+                {{item.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <section *ngIf="control.type === 'checkbox'">
+        <mat-checkbox>{{control.label}}</mat-checkbox>
+    </section>
+
+    <mat-slide-toggle *ngIf="control.type === 'toggle'">{{control.label}}</mat-slide-toggle>
+
+</div>
