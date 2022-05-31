@@ -41,6 +41,25 @@
       "validators": {}
     },
     {
+      "name": "tipoProducto",
+      "label": "Tipo producto",
+      "value": "",
+      "type": "select",
+      "validators": {},
+      "options": {
+        "items": [
+          {
+            "value": "item-0",
+            "viewValue": "Item 1"
+          },
+          {
+            "value": "item-1",
+            "viewValue": "Item 2"
+          }
+        ]
+      }
+    },
+    {
       "name": "agreeTerms",
       "label": "Do you agree?",
       "value": "false",
@@ -48,31 +67,13 @@
       "validators": {"requiredTrue":true}
     },
     {
-      "name": "lightDark",
-      "label": "Toggle dark mode",
+      "name": "simpleToggle",
+      "label": "Toggle ",
       "value": "false",
       "type": "toggle",
       "validators": {}
-    },
-    {
-      "name": "size",
-      "label": "Size",
-      "value": "",
-      "type": "range",
-      "options": {
-        "min": "0",
-        "max": "100",
-        "step": "1",
-        "icon": "sunny"
-      },
-      "validators": {}
-    },
-    {
-      "name": "productos",
-      "label": "Productos",
-      "value": "",
-      "type": "list",
-      "validators": {}
     }
-  ]
+  ],
+  "id": 1,
+  "version": 1
 }
