@@ -13,14 +13,14 @@
     },
     {
       "name": "lastName",
-      "label": "Last name",
+      "label": "Apellido",
       "value": "",
       "type": "text",
       "validators": {"required":true}
     },
     {
       "name": "age",
-      "label": "Age",
+      "label": "Edad",
       "value": "",
       "type": "number",
       "validators" : {
@@ -35,7 +35,7 @@
     },
     {
       "name": "comments",
-      "label": "Comments",
+      "label": "Comentarios",
       "value": "",
       "type": "textarea",
       "validators": {}
@@ -49,11 +49,11 @@
       "options": {
         "items": [
           {
-            "value": "item-0",
+            "value": "item-1",
             "viewValue": "Item 1"
           },
           {
-            "value": "item-1",
+            "value": "item-2",
             "viewValue": "Item 2"
           }
         ]
@@ -62,15 +62,22 @@
     {
       "name": "agreeTerms",
       "label": "Do you agree?",
-      "value": "false",
+      "value": false,
       "type": "checkbox",
       "validators": {"requiredTrue":true}
     },
     {
       "name": "simpleToggle",
       "label": "Toggle ",
-      "value": "false",
+      "value": false,
       "type": "toggle",
+      "validators": {}
+    }, 
+    {
+      "name": "locationSelect",
+      "label": "Location",
+      "value": "",
+      "type": "location-select",
       "validators": {}
     }
   ],

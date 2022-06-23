@@ -1,0 +1,28 @@
+.drop-container{
+    margin: 100px;
+    height: 300px;
+}
+
+.drop-form{
+    height: 100%;
+}
+
+.action{
+    margin-top: 10px;
+}
+
+.dropdown-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.country, .state, .city{
+    margin: 20px;
+    width: 30%;
+}
+
+.my-class .multiselect-dropdown .dropdown-list .multiselect-item-checkbox{
+    width: 300px !important;
+    height: 300px !important;
+}
