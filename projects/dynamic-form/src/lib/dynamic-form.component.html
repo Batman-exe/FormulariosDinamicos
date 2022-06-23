@@ -1,32 +1,36 @@
-<div *ngFor="let control of jsonFormData?.controls">
-    
-    <mat-form-field *ngIf="['text', 'password', 'email', 'number', 'search', 'tel', 'url'].includes(control.type)" 
-    class="full-width" appearance="fill">
-        <mat-label>{{control.label}}</mat-label>
-        <input  matInput
-            placeholder="{{control.options?.placeholder}}" value="{{control.value}}" name="{{control.name}}"
-            type="{{control.type}}">
-    </mat-form-field>
+<form [formGroup]="myForm" >
+    <div class="control-container" *ngFor="let control of jsonFormData?.controls">
 
-    <mat-form-field *ngIf="control.type === 'textarea'">
-        <mat-label>{{control.label}}</mat-label>
-        <textarea  matInput placeholder="{{control.options?.placeholder}}" name="{{control.name}}" 
-        value="{{control.value}}"></textarea>
-    </mat-form-field>
+        <mat-form-field *ngIf="['text', 'password', 'email', 'number', 'search', 'tel', 'url'].includes(control.type)"
+            class="input-container" appearance="fill">
+            <mat-label>{{control.label}}</mat-label>
+            <input matInput placeholder="{{control.options?.placeholder}}" value="{{control.value}}"
+                formControlName="{{control.name}}" type="{{control.type}}">
+        </mat-form-field>
 
-    <mat-form-field *ngIf="control.type === 'select'">
-        <mat-label>{{control.label}}</mat-label>
-        <mat-select>
-            <mat-option *ngFor="let item of control.options?.items" [value]="item.value">
-                {{item.viewValue}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
+        <mat-form-field *ngIf="control.type === 'textarea'">
+            <mat-label>{{control.label}}</mat-label>
+            <textarea matInput placeholder="{{control.options?.placeholder}}" formControlName="{{control.name}}"
+                value="{{control.value}}"></textarea>
+        </mat-form-field>
 
-    <section *ngIf="control.type === 'checkbox'">
-        <mat-checkbox>{{control.label}}</mat-checkbox>
-    </section>
+        <mat-form-field *ngIf="control.type === 'select'">
+            <mat-label>{{control.label}}</mat-label>
+            <mat-select formControlName="{{control.name}}">
+                <mat-option *ngFor="let item of control.options?.items" [value]="item.value">
+                    {{item.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
 
-    <mat-slide-toggle *ngIf="control.type === 'toggle'">{{control.label}}</mat-slide-toggle>
+        <section *ngIf="control.type === 'checkbox'">
+            <mat-checkbox formControlName="{{control.name}}">{{control.label}}</mat-checkbox>
+        </section>
 
-</div>
+        <mat-slide-toggle *ngIf="control.type === 'toggle'" formControlName="{{control.name}}">{{control.label}}
+        </mat-slide-toggle>
+
+        <app-custom-select *ngIf="control.type === 'location-select'"></app-custom-select>
+
+    </div>
+</form>
