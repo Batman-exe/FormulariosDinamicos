@@ -3,15 +3,27 @@
 </h1>
 
 
-<form class="form">
-  <mat-form-field class="full-width" appearance="fill">
+<form class="form-1" [formGroup]="formularioUno">
+  <mat-form-field class="fixed-field" appearance="fill">
     <mat-label>Producto</mat-label>
-    <mat-select>
+    <mat-select formControlName="productos">
       <mat-option *ngFor="let item of options" [value]="item.value">
         {{item.viewValue}}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
-  <lib-dynamicForm [jsonFormData]="formData" style="width: 100%;"></lib-dynamicForm>
+  <lib-dynamicForm [jsonFormData]="formData" style="width: 100%;" formControlName="dinamicos" (eventData)="getDynamicFormData($event)"></lib-dynamicForm>
+
+  <button type="submit" (click)="onClick()">TOTAL</button>
+</form>
+
+<hr>
+<h1>
+  Información de ubicación
+</h1>
+
+<form>
+  <app-custom-select></app-custom-select>
+  <lib-dynamicForm [jsonFormData]="formData2"></lib-dynamicForm>
 </form>

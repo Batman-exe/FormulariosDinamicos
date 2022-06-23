@@ -1,0 +1,19 @@
+{
+    "controls": [
+      {
+        "name": "prueba2",
+        "label": "Prueba Dos",
+        "value": "",
+        "type": "text",
+        "validators": {
+          "required": true,
+          "minLength": 1,
+          "maxLength": 15
+        }
+      }
+      
+    ],
+    "id": 2,
+    "version": 2
+  }
+  

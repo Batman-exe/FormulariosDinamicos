@@ -1,7 +1,13 @@
-.form {
-  width: 100%;
+.form-1 {
+  width: calc(100% - 60px);
+  margin: 30px;
+ 
 }
 
-.full-width {
-  width: 100%;
+.fixed-field {
+  width: 40%;
+}
+
+lib-dynamicForm {
+  display: inline-block;
 }

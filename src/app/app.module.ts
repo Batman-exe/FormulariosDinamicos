@@ -9,10 +9,13 @@ import {  MatNativeDateModule} from '@angular/material/core';
 import {  HttpClientModule} from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { DynamicFormModule } from 'projects/dynamic-form/src/public-api';
+import { CustomSelectComponent } from './custom-select/custom-select.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CustomSelectComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,8 @@ import { DynamicFormModule } from 'projects/dynamic-form/src/public-api';
     MatNativeDateModule,
     MaterialExampleModule,
     ReactiveFormsModule,
-    DynamicFormModule
+    DynamicFormModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
